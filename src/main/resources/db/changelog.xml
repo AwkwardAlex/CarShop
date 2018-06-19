@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<preConditions onFail="HALT">
+    <dbms type="postgresql"/>
+</preConditions>
+
+<changeSet id="1" author="Alex">
+    <createTable tableName="Cars">
+        <column name="ID" type="BIGINT" autoIncrement="true">
+            <constraints nullable="false" unique="true"
+                         primaryKey="true" primaryKeyName="cars_id"/>
+        </column>
+        <column name="CAR_MODEL" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="CAR_MARK" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="CAR_TYPE" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="PRICE" type="NUMERIC(10,2)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="YEAR" type="SMALLINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="COUNTRY_OF_REGISTRATION" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="DESCRIPTION" type="VARCHAR(500)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+    <createTable tableName="Users">
+        <column name="ID" type="BIGINT" autoIncrement="true">
+            <constraints nullable="false" unique="true"
+                         primaryKey="true" primaryKeyName="users_id"/>
+        </column>
+        <column name="FIRST_NAME" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="LAST_NAME" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="TIME_ON_APP" type="SMALLINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="MOBILE_PHONE" type="VARCHAR(20)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+</changeSet>
+</databaseChangeLog>
