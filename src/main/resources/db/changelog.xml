@@ -40,6 +40,12 @@
             <constraints nullable="false" unique="true"
                          primaryKey="true" primaryKeyName="users_id"/>
         </column>
+        <column name="EMAIL" type="VARCHAR(50)">
+            <constraints nullable="false" unique="true"/>
+        </column>
+        <column name="PASSWORD" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
         <column name="FIRST_NAME" type="VARCHAR(50)">
             <constraints nullable="false"/>
         </column>
